@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var FCRC = {lat: 19.044497, lng: 72.8182648};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: FCRC
+        });
+		var VES = {lat: 19.0472062, lng: 72.8886818};
+        var KJ = {lat: 19.0480801, lng: 72.8714511};
+		
+		var TSEC = {lat: 19.0646936, lng: 72.8346362};
+		var NSE = {lat: 19.0705164, lng: 72.8643453};
+		
+		var  t1 = "UnScript 2k18 - 27/03/18";
+        var t1 = t1.bold();
+		
+        var marker1 = new google.maps.Marker({
+          position: FCRC,
+          map: map,
+		  title: 'UnScript 2k18 - 27/03/18'
+        });
+		 var infowindow1 = new google.maps.InfoWindow({
+          content: t1
+        }); 
+		 marker1.addListener('click', function() {
+          infowindow1.open(map, marker1);
+        });
+       
+
+			var  t2 = 'TechTrix - 28/03/18';
+            var t2 = t2.bold();
+		
+		
+		  
+		  var marker2 = new google.maps.Marker({
+          position: VES,
+          map: map,
+		  title: t2
+        });
+		
+		var infowindow2 = new google.maps.InfoWindow({
+          content: t2
+        }); 
+		 marker2.addListener('click', function() {
+          infowindow2.open(map, marker2);
+        });
+		
+		  var marker3 = new google.maps.Marker({
+          position: KJ,
+          map: map,
+		  title: 'CodeChamp - 27/03/18'
+        });
+		var infowindow3 = new google.maps.InfoWindow({
+          content: 'CodeChamp - 27/03/18'.bold()
+        }); 
+		 marker3.addListener('click', function() {
+          infowindow3.open(map, marker3);
+        });
+	  
+
+	  	  var marker4 = new google.maps.Marker({
+          position: NSE,
+          map: map,
+		  title: 'NSE FutureTech Hackothon Machine  Learning'
+        });
+		var infowindow4 = new google.maps.InfoWindow({
+          content: 'NSE FutureTech Hackothon Machine  Learning  -30/04/18'.bold()
+        }); 
+		 marker4.addListener('click', function() {
+          infowindow4.open(map, marker4);
+        });
+	 
+	  
+	      var marker5 = new google.maps.Marker({
+          position: TSEC,
+          map: map,
+		  title: 'Codeathon - Programming  Competition' 
+        });
+		var infowindow5 = new google.maps.InfoWindow({
+          content: 'Codeathon Programming  Competition -8/05/18'.bold()
+        }); 
+		 marker5.addListener('click', function() {
+          infowindow5.open(map, marker5);
+        });
+	 
+	 
+		
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5_6sxC1c-_4f-cqyAbfha-2YixSjh51Y&callback=initMap">
+    </script>
+  </body>
+</html>
